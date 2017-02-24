@@ -47,7 +47,7 @@ namespace LimitLess.Area
             {
                 /*extract excel file and then save the file to App_Data folder*/
                 var postedFile = httpRequest.Files[file];
-                string uploadFilePath = HttpContext.Current.Server.MapPath("~/App_Data/uploaded_spreadsheet" + DateTime.Now.ToString("HHmmss") + postedFile.FileName);
+                string uploadFilePath = HttpContext.Current.Server.MapPath("~/App_Data/uploaded_spreadsheet/" + DateTime.Now.ToString("HHmmss") + postedFile.FileName);
                 postedFile.SaveAs(uploadFilePath);
                 string standardFilePath = HttpContext.Current.Server.MapPath("~/Files/standard_files/excel_format.xlsx");
                 /* open the standard excel file and user's excel file */
